@@ -2,8 +2,8 @@
 
 /* appearance */
 static const unsigned int borderpx = 0; /* border pixel of windows */
-static const unsigned int gappx = 5;    /* gaps between windows */
-static const unsigned int snap = 5;     /* snap pixel */
+static const unsigned int gappx = 10;   /* gaps between windows */
+static const unsigned int snap = 10;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const int focusonwheel = 0;
@@ -17,11 +17,11 @@ static const char col_cyan[] = "#1f365a";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+    [SchemeSel] = {col_gray3, col_cyan, col_gray2},
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"@", "Ɛ", "3", "4", "5", "6", "7", "8", "9"};
 static const char *tagsalt[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
@@ -31,8 +31,9 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     isfloating
        isfakefullscreen monitor */
-    {"Gimp", NULL, NULL, 0, 1, 0, -1},
-    {"Firefox", NULL, NULL, 1 << 8, 0, 1, -1},
+    /* {"Gimp", NULL, NULL, 0, 1, 0, -1}, */
+    {"Firefox", NULL, NULL, 1 << 0, 0, 1, -1},
+    {"Emacs", NULL, NULL, 1 << 1, 0, 0, -1},
 };
 
 /* layout(s) */
@@ -40,7 +41,7 @@ static const int dirs[3] = {DirHor, DirVer, DirVer}; /* tiling dirs */
 static const float facts[3] = {1.4, 1, 1};           /* tiling facts */
 static const int nmaster = 1; /* number of clients in master area */
 static const int resizehints =
-    1; /* 1 means respect size hints in tiled resizals */
+    0; /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
